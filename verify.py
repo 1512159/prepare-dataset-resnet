@@ -26,11 +26,14 @@ if __name__ == '__main__':
         if img is None:
             print('Cannot load img: '+item)
             error += 1
+            os.remove(item)
+            print('--> Deleted!')
             continue
-        file_out_dir = out_dir+os.path.dirname(item)
-        if not (os.path.exists(file_out_dir)):
-            os.makedirs(file_out_dir)
-        copyfile(item,file_out_dir+os.path.basename(item))
+        # file_out_dir = out_dir+os.path.os.path.dirname(item)
+        # if not (os.path.exists(file_out_dir)):
+        #     os.makedirs(file_out_dir)
+        # copyfile(item,file_out_dir+os.path.basename(item))
+        # print('copied to '+file_out_dir+os.path.basename(item))
 
     print('-------------------------------')
     print('Total file = '+str(len(items)))
